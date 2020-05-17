@@ -7,18 +7,6 @@ import random
 import os
 import time
 
-# Set up the Screen
-# def screen_here():
-# 	global wn
-# 	global pen
-
-# 	pen = turtle.Turtle()
-# 	pen.hideturtle()
-
-# 	wn = turtle.Screen()
-# 	wn.setup(width=0.7, height = 0.7)
-# 	wn.bgcolor('lightgreen')
-# 	wn.tracer(3)
 
 class Game():
 
@@ -47,9 +35,44 @@ class Game():
 		self.pen.pendown()
 
 
+class Target(turtle.Turtle):
+
+	def __init__(self, shape, color):
+		turtle.Turtle.__init__(self)
+		self.shape(shape)
+		self.color(color)
+		self.penup()
+		x, y = random.randint(-290, 290), random.randint(-290, 290)
+		self.goto(x, y)
+		self.pendown()
+		self.speed(0)
+
+
+
+
+
+
+
+
 game = Game()
 game.screen_here()
 game.drow_border()
+
+target_1 = Target('circle', 'red')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
